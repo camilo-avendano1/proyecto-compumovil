@@ -3,6 +3,7 @@ module.exports = {
   extends: ["expo", "prettier"],
   plugins: ["prettier"],
   rules: {
-    "prettier/prettier": "error",
+    "prettier/prettier": ["error", { endOfLine: "lf" }],
+    "linebreak-style": ["error", "unix"],
   },
 };
