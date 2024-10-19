@@ -26,14 +26,15 @@ const CustomDateTimePicker = ({
 
   const onChange = (
     event: DateTimePickerEvent,
-    selectedDate: Date | undefined,
+    selectedDateTime: Date | undefined,
   ) => {
-    const currentDate = selectedDate;
-    setDate(currentDate);
+    const currentDateTime = selectedDateTime;
+    setDate(currentDateTime);
     console.log(name);
     pickerMode === "date" &&
-      setValue(name, currentDate?.toISOString().slice(0, 10));
-    pickerMode === "time" && setValue(name, formatTime(currentDate as Date));
+      setValue(name, currentDateTime?.toISOString().slice(0, 10));
+    pickerMode === "time" &&
+      setValue(name, formatTime(currentDateTime as Date));
   };
 
   const showPicker = () => {

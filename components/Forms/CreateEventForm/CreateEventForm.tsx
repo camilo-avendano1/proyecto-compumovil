@@ -43,6 +43,7 @@ const CreateEventForm = () => {
             name="date"
             control={control}
             pickerMode="date"
+            placeholder="Seleccione la fecha"
           />
         </View>
         <View className="flex-1">
@@ -51,6 +52,7 @@ const CreateEventForm = () => {
             name="hour"
             control={control}
             pickerMode="time"
+            placeholder="Seleccione la hora"
           />
         </View>
       </View>
