@@ -1,10 +1,11 @@
+import CreateEventPage from "@/components/screens/CreateEventPage/CreateEventPage";
 import React from "react";
 import { Text, View } from "react-native";
 
 const CreateEvent = () => {
   return (
     <View>
-      <Text></Text>
+      <CreateEventPage />
     </View>
   );
 };
