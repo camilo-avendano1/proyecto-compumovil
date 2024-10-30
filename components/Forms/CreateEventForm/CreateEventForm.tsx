@@ -1,10 +1,13 @@
 import CustomDateTimePicker from "@/components/common/CustomDateTimePicker";
 import CustomTextInput from "@/components/common/CustomTextInput";
+import { useState } from "react";
 import { FieldValues, SubmitHandler, useFormContext } from "react-hook-form";
 import { Button, GestureResponderEvent, Text, View } from "react-native";
+import ModalLocationSeleccion from "./ModalLocationSeleccion";
 
 const CreateEventForm = () => {
   const { control, handleSubmit, reset } = useFormContext();
+  const [showMapModal, setShowMapModal] = useState(false);
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     console.log(data);
   };
@@ -56,8 +59,17 @@ const CreateEventForm = () => {
           />
         </View>
       </View>
-      <Button title="Submit" onPress={handleSubmit(onSubmit)}></Button>
-      <Button title="Clear" onPress={handleReset}></Button>
+      <Text>Lugar del evento:</Text>
+      <Button
+        title="Seleccionar lugar del evento en el mapa"
+        onPress={() => setShowMapModal(true)}
+      />
+      <Button title="Submit" onPress={handleSubmit(onSubmit)} />
+      <Button title="Clear" onPress={handleReset} />
+      <ModalLocationSeleccion
+        showMapModal={showMapModal}
+        setShowMapModal={setShowMapModal}
+      />
     </View>
   );
 };
