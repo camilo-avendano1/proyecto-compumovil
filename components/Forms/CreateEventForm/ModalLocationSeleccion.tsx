@@ -13,6 +13,7 @@ const ModalLocationSeleccion = ({ showMapModal, setShowMapModal }: Props) => {
   );
   const handlePressMap = (e: MapPressEvent) => {
     setSelectedCoordinates(e.nativeEvent.coordinate);
+    console.log(selectedCoordinates);
   };
 
   const handleCloseModal = () => {
