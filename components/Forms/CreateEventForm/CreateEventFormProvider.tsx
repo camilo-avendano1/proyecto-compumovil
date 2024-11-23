@@ -1,3 +1,4 @@
+import React from "react";
 import { ICreateEventForm } from "@/types/create-event-form.type";
 import { FormProvider, useForm } from "react-hook-form";
 
